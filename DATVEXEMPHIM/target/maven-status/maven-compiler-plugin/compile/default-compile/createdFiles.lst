@@ -1,2 +1,6 @@
-com\mycompany\datvexemphim\resources\JakartaEE10Resource.class
-com\mycompany\datvexemphim\JakartaRestConfiguration.class
+com\mycompany\datvexemphim\dao\DBConnection.class
+com\mycompany\datvexemphim\dao\MovieDAO.class
+com\mycompany\datvexemphim\model\Movie.class
+com\mycompany\datvexemphim\model\Genre.class
+com\mycompany\datvexemphim\controller\MovieServlet.class
+com\mycompany\datvexemphim\service\MovieApiService.class
