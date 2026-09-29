@@ -1,248 +1,202 @@
-</header>
-
-    <!-- Main Content Container -->
-    <main class="main-wrapper">
-
-        <!-- Title Header -->
-        <div class="page-header-title">
-            <h1 class="page-title">CHỌN SUẤT CHIẾU</h1>
-        </div>
-
-        <!-- Filter Card Section (Combined Interface 1) -->
-        <section class="filter-card">
-            <!-- Horizontal Date Carousel Tabs -->
-            <div class="date-selector-wrapper">
-                <div class="date-tab active" data-date="14/10">
-                    <div class="date-day">Hôm Nay</div>
-                    <div class="date-num">14/10</div>
-                </div>
-                <div class="date-tab" data-date="15/10">
-                    <div class="date-day">Thứ Hai</div>
-                    <div class="date-num">15/10</div>
-                </div>
-                <div class="date-tab" data-date="16/10">
-                    <div class="date-day">Thứ Ba</div>
-                    <div class="date-num">16/10</div>
-                </div>
-                <div class="date-tab" data-date="17/10">
-                    <div class="date-day">Thứ Tư</div>
-                    <div class="date-num">17/10</div>
-                </div>
-                <div class="date-tab" data-date="18/10">
-                    <div class="date-day">Thứ Năm</div>
-                    <div class="date-num">18/10</div>
-                </div>
-                <div class="date-tab" data-date="19/10">
-                    <div class="date-day">Thứ Sáu</div>
-                    <div class="date-num">19/10</div>
-                </div>
-            </div>
-
-            <!-- Filters Row -->
-            <div class="filters-row">
-                <!-- Cinema Selector -->
-                <div class="filter-group">
-                    <label class="filter-label" for="cinemaSelect">Chọn Rạp</label>
-                    <div class="custom-select-wrapper">
-                        <select id="cinemaSelect" class="custom-select">
-                            <option value="all">Tất cả các rạp</option>
-                            <option value="cgv_vincom" selected>CGV Vincom - Phòng 1 (2D)</option>
-                            <option value="bhd_landmark">BHD Landmark 81 - IMAX</option>
-                            <option value="lotte_vincom">Lotte Vincom - Phòng 1 IMAX</option>
-                        </select>
-                        <span class="select-arrow">▼</span>
-                    </div>
-                </div>
-
-                <!-- Format Radio Options -->
-                <div class="filter-group">
-                    <span class="filter-label">Định dạng</span>
-                    <div class="format-options">
-                        <label class="format-radio-btn">
-                            <input type="radio" name="formatFilter" value="all">
-                            <span>Tất cả</span>
-                        </label>
-                        <label class="format-radio-btn">
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+<%  request.setAttribute("currentPage", "lichChieu"); %>
+=======
+<%
+    request.setAttribute("currentPage", "lichChieu");
+%>
+<title>CINE+ | Chọn Suất Chiếu</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+<%-- keep the shared project header instead of duplicating the nav --%>
+<%@ include file="../common/header.jsp" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    request.setAttribute("currentPage", "lichChieu");
+%>
+>>>>>>> 9378cfb910b6f7409d5e26cb8ccecc69f4260abc
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CINE+ | Chọn Suất Chiếu</title>
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css">
+<<<<<<< HEAD
+    <%@ include file="../common/header.jsp" %>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="header-nav">
-        <a href="${pageContext.request.contextPath}/user/trangchu.jsp" class="brand-container">
-            <div class="brand-logo-icon">
-                <svg viewBox="0 0 24 24">
-                    <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4h-2l2 4H7L5 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4h-4zM8 17H4v-4h4v4zm0-6H4V7h4v4zm6 6h-4v-4h4v4zm0-6h-4V7h4v4zm6 6h-4v-4h4v4zm0-6h-4V7h4v4z"/>
+<!-- ── Tiêu đề trang ── -->
+<div class="page-title-bar">
+    <div class="page-main-title">Chọn Suất Chiếu</div>
+    <div class="page-title-bar-line"></div>
+</div>
+
+<div class="sc-container">
+
+    <!-- DATE TABS -->
+    <div class="date-tabs">
+        <button class="date-tab active" onclick="switchDate(this)">
+            <span class="dt-day">Hôm Nay</span><span class="dt-num">14/10</span>
+        </button>
+        <button class="date-tab" onclick="switchDate(this)">
+            <span class="dt-day">Thứ Hai</span><span class="dt-num">15/10</span>
+        </button>
+        <button class="date-tab" onclick="switchDate(this)">
+            <span class="dt-day">Thứ Ba</span><span class="dt-num">16/10</span>
+        </button>
+        <button class="date-tab" onclick="switchDate(this)">
+            <span class="dt-day">Thứ Tư</span><span class="dt-num">17/10</span>
+        </button>
+        <button class="date-tab" onclick="switchDate(this)">
+            <span class="dt-day">Thứ Năm</span><span class="dt-num">18/10</span>
+        </button>
+        <button class="date-tab" onclick="switchDate(this)">
+            <span class="dt-day">Thứ Sáu</span><span class="dt-num">19/10</span>
+        </button>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="sc-filters">
+        <!-- Chọn rạp -->
+        <div class="sc-filter-card">
+            <label class="sc-filter-label">Chọn Rạp</label>
+            <div class="sc-select-wrap">
+                <select class="sc-select">
+                    <option>Tất cả các rạp</option>
+                    <option selected>CGV Vincom - Phòng 1 (2D)</option>
+                    <option>BHD Landmark 81 - IMAX</option>
+                    <option>Lotte Vincom - Phòng 1 IMAX</option>
+                </select>
+                <svg class="sc-select-arrow" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9"/>
                 </svg>
             </div>
-            <div class="brand-text-group">
-                <div class="brand-name">CINE<span>+</span></div>
-                <div class="brand-tagline">More Movies, More Feelings</div>
-            </div>
-        </a>
-
-        <ul class="nav-menu">
-            <li><a href="${pageContext.request.contextPath}/user/trangchu.jsp" class="nav-link">Trang chủ</a></li>
-            <li><a href="#" class="nav-link">Phim</a></li>
-            <li><a href="${pageContext.request.contextPath}/user/chonsuatchieu.jsp" class="nav-link active">Lịch chiếu</a></li>
-            <li><a href="#" class="nav-link">Rạp</a></li>
-            <li><a href="#" class="nav-link">Ưu đãi</a></li>
-        </ul>
-
-        <div class="header-right">
-            <div class="search-box">
-                <input type="text" class="search-input" placeholder="Tìm kiếm phim, diễn viên...">
-                <button class="search-btn" type="button" aria-label="Search">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-            </div>
-
-            <button class="header-icon-btn" aria-label="User Profile">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-            </button>
-
-            <button class="header-icon-btn" aria-label="Menu">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
         </div>
-<input type="radio" name="formatFilter" value="2d" checked>
-                            <span>2D</span>
-                        </label>
-                        <label class="format-radio-btn">
-                            <input type="radio" name="formatFilter" value="3d">
-                            <span>3D</span>
-                        </label>
-                        <label class="format-radio-btn">
-                            <input type="radio" name="formatFilter" value="imax">
-                            <span>IMAX</span>
-                        </label>
-                        <label class="format-radio-btn">
-                            <input type="radio" name="formatFilter" value="goldclass">
-                            <span>Gold Class</span>
-                        </label>
+        <!-- Định dạng -->
+        <div class="sc-filter-card">
+            <label class="sc-filter-label">Định Dạng</label>
+            <div class="sc-format-row">
+                <label class="sc-fmt"><input type="radio" name="fmt" value="all"> Tất cả</label>
+                <label class="sc-fmt"><input type="radio" name="fmt" value="2d" checked> 2D</label>
+                <label class="sc-fmt"><input type="radio" name="fmt" value="3d"> 3D</label>
+                <label class="sc-fmt"><input type="radio" name="fmt" value="imax"> IMAX</label>
+                <label class="sc-fmt"><input type="radio" name="fmt" value="gold"> Gold Class</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOVIE LIST -->
+    <div class="sc-movie-list">
+
+        <!-- Phim 1 -->
+        <div class="sc-movie-card">
+            <div class="sc-poster">
+                <img src="https://image.tmdb.org/t/p/w154/4q2hz2m8hubgvijz8Ez0T2Os2Yv.jpg"
+                     alt="Thanh Gươm Diệt Quỷ" class="sc-poster-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="sc-poster-ph" style="background:linear-gradient(145deg,#1a1a2e,#16213e);display:none;">🗡️</div>
+                <div class="sc-poster-rating">★ 9.7</div>
+            </div>
+            <div class="sc-movie-body">
+                <div class="sc-movie-name">Thanh Gươm Diệt Quỷ</div>
+                <div class="sc-movie-meta">Hành động | 118 phút | Phiêu lưu</div>
+
+                <div class="sc-cinema-group">
+                    <div class="sc-cinema-name"><span>CGV Vincom - Phòng 1 (2D)</span></div>
+                    <div class="sc-times">
+                        <button class="sc-time" onclick="pickTime(this)">10:00</button>
+                        <button class="sc-time hot" onclick="pickTime(this)">13:30 <span class="hot-tag">Hot</span></button>
+                        <button class="sc-time" onclick="pickTime(this)">16:00</button>
+                        <button class="sc-time" onclick="pickTime(this)">19:30</button>
+                        <button class="sc-time" onclick="pickTime(this)">22:00</button>
+                    </div>
+                </div>
+
+                <div class="sc-cinema-group">
+                    <div class="sc-cinema-name"><span>CGV Landmark 81 - IMAX</span></div>
+                    <div class="sc-times">
+                        <button class="sc-time" onclick="pickTime(this)">11:00</button>
+                        <button class="sc-time" onclick="pickTime(this)">14:30</button>
+                        <button class="sc-time hot" onclick="pickTime(this)">18:00 <span class="hot-tag">Hot</span></button>
+                        <button class="sc-time" onclick="pickTime(this)">21:30</button>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Movie Showcase List (Combined Interface 2 - Scrollable content) -->
-        <section class="movies-container">
-
-            <!-- Movie Card 1: Thanh Gươm Diệt Quỷ -->
-            <article class="movie-card">
-                <div class="movie-poster-box">
-                    <img src="${pageContext.request.contextPath}/assets/images/demon_slayer.png" alt="Thanh Gươm Diệt Quỷ" class="movie-poster-img">
-                    <div class="movie-rating-badge">
-                        <span>★</span> 8.7
-                    </div>
-                </div>
-
-                <div class="movie-details">
-                    <h2 class="movie-title">Thanh Gươm Diệt Quỷ</h2>
-                    <div class="movie-meta">Hành động | 120 phút | Khởi chiếu từ 10/2026</div>
-
-                    <!-- Cinema Showtime Group 1 -->
-                    <div class="cinema-group" data-cinema="cgv_vincom" data-format="2d">
-                        <div class="cinema-name">CGV Vincom - Phòng 1 (2D)</div>
-                        <div class="showtimes-grid">
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="10:00">10:00</button>
-                            <button class="showtime-btn highlight active" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="13:30">13:30</button>
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="16:00">16:00</button>
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="19:30">19:30</button>
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="22:00">22:00</button>
-                        </div>
-                    </div>
-
-                    <!-- Cinema Showtime Group 2 -->
-<div class="cinema-group" data-cinema="bhd_landmark" data-format="imax">
-                        <div class="cinema-name">CGV Landmark 81 - IMAX</div>
-                        <div class="showtimes-grid">
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Landmark 81 - IMAX" data-time="11:00">11:00</button>
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Landmark 81 - IMAX" data-time="14:30">14:30</button>
-                            <button class="showtime-btn highlight" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Landmark 81 - IMAX" data-time="18:00">18:00</button>
-                            <button class="showtime-btn" data-movie="Thanh Gươm Diệt Quỷ" data-cinema="CGV Landmark 81 - IMAX" data-time="21:30">21:30</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Movie Card 2: Inside Out 2 -->
-            <article class="movie-card">
-                <div class="movie-poster-box">
-                    <img src="${pageContext.request.contextPath}/assets/images/inside_out2.png" alt="Inside Out 2" class="movie-poster-img">
-                    <div class="movie-rating-badge">
-                        <span>★</span> 8.9
-                    </div>
-                </div>
-
-                <div class="movie-details">
-                    <h2 class="movie-title">Inside Out 2</h2>
-                    <div class="movie-meta">Hoạt hình | 96 phút | Gia đình, Hài hước</div>
-
-                    <!-- Cinema Showtime Group 1 -->
-                    <div class="cinema-group" data-cinema="cgv_vincom" data-format="2d">
-                        <div class="cinema-name">CGV Vincom - Phòng 1 (2D)</div>
-                        <div class="showtimes-grid">
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="10:00">10:00</button>
-                            <button class="showtime-btn highlight" data-movie="Inside Out 2" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="13:30">13:30</button>
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="16:00">16:00</button>
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="19:30">19:30</button>
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Vincom - Phòng 1 (2D)" data-time="22:00">22:00</button>
-                        </div>
-                    </div>
-
-                    <!-- Cinema Showtime Group 2 -->
-                    <div class="cinema-group" data-cinema="bhd_landmark" data-format="imax">
-                        <div class="cinema-name">CGV Landmark 81 - IMAX</div>
-<div class="showtimes-grid">
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Landmark 81 - IMAX" data-time="11:00">11:00</button>
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Landmark 81 - IMAX" data-time="14:30">14:30</button>
-                            <button class="showtime-btn highlight" data-movie="Inside Out 2" data-cinema="CGV Landmark 81 - IMAX" data-time="18:00">18:00</button>
-                            <button class="showtime-btn" data-movie="Inside Out 2" data-cinema="CGV Landmark 81 - IMAX" data-time="21:30">21:30</button>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-        </section>
-    </main>
-
-    <!-- Bottom Sticky Action Bar -->
-    <footer class="bottom-action-bar">
-        <a href="${pageContext.request.contextPath}/user/trangchu.jsp" class="btn-back">
-            <span>←</span> Quay lại
-        </a>
-
-        <div class="brand-footer-text">
-            <span>CINE+</span> Rạp phim trong tầm tay bạn!
         </div>
 
-        <div class="btn-action-group">
-            <a href="${pageContext.request.contextPath}/user/chonghe.jsp" id="continueBtn" class="btn-continue">
-                Tiếp tục <span>→</span>
-            </a>
-        </div>
-    </footer>
+        <!-- Phim 2 -->
+        <div class="sc-movie-card">
+            <div class="sc-poster">
+                <img src="https://image.tmdb.org/t/p/w154/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
+                     alt="Inside Out 2" class="sc-poster-img"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="sc-poster-ph" style="background:linear-gradient(145deg,#0a1a0a,#1a3d1a);display:none;">😊</div>
+                <div class="sc-poster-rating">★ 8.9</div>
+            </div>
+            <div class="sc-movie-body">
+                <div class="sc-movie-name">Inside Out 2</div>
+                <div class="sc-movie-meta">Hoạt hình | 100 phút | Gia đình</div>
 
-    <!-- JavaScript Application -->
-    <script src="${pageContext.request.contextPath}/assets/js/app.js"></script>
+                <div class="sc-cinema-group">
+                    <div class="sc-cinema-name"><span>CGV Vincom - Phòng 1 (2D)</span></div>
+                    <div class="sc-times">
+                        <button class="sc-time" onclick="pickTime(this)">10:00</button>
+                        <button class="sc-time hot" onclick="pickTime(this)">13:30 <span class="hot-tag">Hot</span></button>
+                        <button class="sc-time" onclick="pickTime(this)">16:00</button>
+                        <button class="sc-time" onclick="pickTime(this)">19:30</button>
+                        <button class="sc-time" onclick="pickTime(this)">22:00</button>
+                    </div>
+                </div>
+
+                <div class="sc-cinema-group">
+                    <div class="sc-cinema-name"><span>CGV Landmark 81 - IMAX</span></div>
+                    <div class="sc-times">
+                        <button class="sc-time" onclick="pickTime(this)">11:00</button>
+                        <button class="sc-time" onclick="pickTime(this)">14:30</button>
+                        <button class="sc-time hot" onclick="pickTime(this)">18:00 <span class="hot-tag">Hot</span></button>
+                        <button class="sc-time" onclick="pickTime(this)">21:30</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /sc-movie-list -->
+
+    <!-- BOTTOM BAR -->
+    <div class="sc-bottom-bar">
+        <button class="btn-back" onclick="history.back()">← Quay lại</button>
+        <button class="btn-next" onclick="location.href='${pageContext.request.contextPath}/user/chonghe.jsp'">
+            Tiếp tục →
+        </button>
+    </div>
+
+</div><!-- /sc-container -->
+
+<%@ include file="../common/footer.jsp" %>
+
+<script>
+    function switchDate(el) {
+        document.querySelectorAll('.date-tab').forEach(function(t){ t.classList.remove('active'); });
+        el.classList.add('active');
+    }
+    function pickTime(btn) {
+        document.querySelectorAll('.sc-time').forEach(function(b){ b.classList.remove('picked'); });
+        btn.classList.add('picked');
+    }
+</script>
+
 </body>
 </html>
+=======
+<title>CINE+ | Chọn Suất Chiếu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&display=swap">
+<% @ include file="../common/header.jsp" %>
+<style>
+    /* preserve current app layout and styling */
+    .page-title-bar { ... }
+    .filter-card { ... }
+    .movie-row { ... }
+    .sticky-bar { ... }
+</style>
+>>>>>>> 9378cfb910b6f7409d5e26cb8ccecc69f4260abc

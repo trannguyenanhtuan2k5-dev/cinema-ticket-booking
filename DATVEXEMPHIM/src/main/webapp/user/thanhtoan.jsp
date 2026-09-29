@@ -1530,9 +1530,15 @@
         // Initialize from URL params if passed from chonghe.jsp
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
+<<<<<<< HEAD
             const seatsParam = urlParams.get('seats') || sessionStorage.getItem('booking_seats');
             const countParam = urlParams.get('count') || sessionStorage.getItem('booking_count');
             const totalParam = urlParams.get('total') || sessionStorage.getItem('booking_total');
+=======
+            const seatsParam = urlParams.get('seats');
+            const countParam = urlParams.get('count');
+            const totalParam = urlParams.get('total');
+>>>>>>> 91f922ef1370547c7acca7703630eb5a3fa63efd
 
             if (seatsParam) {
                 document.getElementById('display-seats').textContent = seatsParam;
